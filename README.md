@@ -6,7 +6,7 @@ A possible use case could be: an image dataset exists, to which images are to be
 
 ## Basic use
 
-First we hash and create the index of the images in the base directory with:
+<!-- First we hash and create the index of the images in the base directory with:
 
 ```
 $ python index_images.py --images 101_ObjectCategories --tree vptree.pickle --hashes hashes.pickle
@@ -16,7 +16,7 @@ The resulting index and hashes is stored in a `pickle` file. Once this has been 
 
 ```
 $ python search.py --tree vptree.pickle --hashes hashes.pickle --query queries/accordion.jpg
-```
+``` -->
 
 ## Setup
 
