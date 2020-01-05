@@ -6,17 +6,17 @@ A possible use case could be: an image dataset exists, to which images are to be
 
 ## Basic use
 
-<!-- First we hash and create the index of the images in the base directory with:
+First we hash and create the index of the images in the base directory with the CLI command `current`, the image path `train`, tree index file `tree.pickle` and the hash dictionary file `hashes.pickle`:
 
 ```
-$ python index_images.py --images 101_ObjectCategories --tree vptree.pickle --hashes hashes.pickle
+$ python test.py current train tree.pickle hashes.pickle
 ```
 
-The resulting index and hashes is stored in a `pickle` file. Once this has been completed, we can search through the exisiting files to see if duplicates exist with:
+The resulting index and hashes is stored in a `pickle` file. Once this has been completed, we can search through the exisiting files, with the command `config` to see if duplicates exist within `my_data/`:
 
 ```
-$ python search.py --tree vptree.pickle --hashes hashes.pickle --query queries/accordion.jpg
-``` -->
+$ python test.py config my_data/
+```
 
 ## Setup
 
