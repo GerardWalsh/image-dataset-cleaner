@@ -7,7 +7,7 @@ import pickle
 import cv2
 
 from src.utils.index import index_images
-from src.utils.hash import dhash, hamming, convert_hash
+from src.utils.hash import dhash, convert_hash
 
 
 @click.group()
@@ -20,13 +20,7 @@ def main():
 @click.argument('hash_path')
 def current(dataset, tree_path, hash_path):
     """
-    A little weather tool that shows you the current weather in a LOCATION of
-    your choice. Provide the city name and optionally a two-digit country code.
-    Here are two examples:
-    1. London,UK
-    2. Canmore
-    You need a valid API key from OpenWeatherMap for the tool to work. You can
-    sign up for a free account at https://openweathermap.org/appid.
+    Build a vantage point tree (https://en.wikipedia.org/wiki/Vantage-point_tree) of the supplied dataset, in O(n log n) time complexity.
     """
     imagePaths = list(paths.list_images(dataset))
     index_images(imagePaths, tree_path, hash_path)
