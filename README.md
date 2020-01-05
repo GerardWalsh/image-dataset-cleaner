@@ -27,7 +27,7 @@ $ pip install -r requirements.txt
 
 ## Basic use
 
-First we hash and create the index of the images in the base directory with the CLI command `current`, the image path `train`, tree index file `tree.pickle` and the hash dictionary file `hashes.pickle`:
+First we hash and create the index of the images in the base directory with the CLI command `current`, the image dataset path `train`, tree index file `tree.pickle` and the hash dictionary file `hashes.pickle`:
 
 ```
 $ python test.py build train tree.pickle hashes.pickle
