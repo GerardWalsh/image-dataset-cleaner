@@ -4,20 +4,6 @@ This repository is designed to create an tool that can be used to efficiently se
 
 A possible use case could be: an image dataset exists, to which images are to be added that were scraped from the website. Duplicates could be created by naaively adding all the scraped images to the dataset, due to the time sensitive nature of data (imformation is often reposted a website). Duplicates in a training set are not ideal and cause issues with model-fitting.
 
-## Basic use
-
-First we hash and create the index of the images in the base directory with the CLI command `current`, the image path `train`, tree index file `tree.pickle` and the hash dictionary file `hashes.pickle`:
-
-```
-$ python test.py current train tree.pickle hashes.pickle
-```
-
-The resulting index and hashes is stored in a `pickle` file. Once this has been completed, we can search through the exisiting files, with the command `config` to see if duplicates exist within `my_data/`:
-
-```
-$ python test.py config my_data/
-```
-
 ## Setup
 
 * Create a virtual environment `venv` with: 
@@ -37,4 +23,18 @@ $ pip install -U pip
 
 ``` 
 $ pip install -r requirements.txt
+```
+
+## Basic use
+
+First we hash and create the index of the images in the base directory with the CLI command `current`, the image path `train`, tree index file `tree.pickle` and the hash dictionary file `hashes.pickle`:
+
+```
+$ python test.py current train tree.pickle hashes.pickle
+```
+
+The resulting index and hashes is stored in a `pickle` file. Once this has been completed, we can search through the exisiting files, with the command `config` to see if duplicates exist within `my_data/`:
+
+```
+$ python test.py config my_data/
 ```
