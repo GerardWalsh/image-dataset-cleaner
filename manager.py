@@ -9,6 +9,7 @@ import cv2
 from src.utils.index import index_images
 from src.utils.hash import dhash, convert_hash
 
+DUPLICATE_DIRECTORY = 'duplicates/'
 
 @click.group()
 def main():
@@ -18,16 +19,16 @@ def main():
 @click.argument('dataset')
 @click.argument('tree_path')
 @click.argument('hash_path')
-def current(dataset, tree_path, hash_path):
+def build(dataset, tree_path, hash_path):
     """
     Build a vantage point tree (https://en.wikipedia.org/wiki/Vantage-point_tree) of the supplied dataset, in O(n log n) time complexity.
     """
     imagePaths = list(paths.list_images(dataset))
-    index_images(imagePaths, tree_path, hash_path)
+    index_images(imagePaths, tree_path, hash_path, duplicate_dir=DUPLICATE_DIRECTORY)
 
 @main.command()
 @click.argument('query_dataset')
-def config(query_dataset):
+def query(query_dataset):
     """
     Store configuration values in a file.
     """
