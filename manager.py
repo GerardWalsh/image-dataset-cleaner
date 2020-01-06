@@ -11,9 +11,11 @@ from src.utils.hash import dhash, convert_hash
 
 DUPLICATE_DIRECTORY = 'duplicates/'
 
+
 @click.group()
 def main():
    pass
+
 
 @main.command()
 @click.argument('dataset')
@@ -25,6 +27,7 @@ def build(dataset, tree_path, hash_path):
     """
     imagePaths = list(paths.list_images(dataset))
     index_images(imagePaths, tree_path, hash_path, duplicate_dir=DUPLICATE_DIRECTORY)
+
 
 @main.command()
 @click.argument('query_dataset')
@@ -62,6 +65,7 @@ def query(query_dataset):
                     print('Deleted')
                     print("duplicate file path:", imagePath)
                     os.remove(imagePath)
+
 
 if __name__ == "__main__":
     main()

@@ -1,3 +1,7 @@
+""""
+Written by A Rosebrock: https://www.pyimagesearch.com/2019/08/26/building-an-image-hashing-search-engine-with-vp-trees-and-opencv/
+"""
+
 # import the necessary packages
 import numpy as np
 import cv2

@@ -1,8 +1,6 @@
 # Image sorting
 
-This repository is designed to create an tool that can be used to efficiently search index of images, from a base directory, for a duplicate when trying to add a new folder of images to the base directory. Images in the base directory are hashed, using a gradient-difference hash, and added to an index that is created with a Python implementation of VP-trees. 
-
-A possible use case could be: an image dataset exists, to which images are to be added that were scraped from the website. Duplicates could be created by naaively adding all the scraped images to the dataset, due to the time sensitive nature of data (imformation is often reposted a website). Duplicates in a training set are not ideal and cause issues with model-fitting.
+This repository is designed to create an tool that can be used to efficiently search index of images, from a base directory, for a duplicate when trying to add a new folder of images to the base directory. Images in the base directory are hashed, using a gradient-difference hash, and added to an index that is created with a Python implementation of VP-trees.
 
 ## Setup
 
@@ -38,3 +36,7 @@ The resulting index and hashes is stored in a `pickle` file. Once this has been 
 ```
 $ python test.py query my_data
 ```
+
+## References
+
+[This](https://www.pyimagesearch.com/2019/08/26/building-an-image-hashing-search-engine-with-vp-trees-and-opencv/) blog post by Adrian Rosebrock at pyimagesearch.com
