@@ -39,4 +39,6 @@ $ python test.py query query_dataset
 
 ## References
 
-[This](https://www.pyimagesearch.com/2019/08/26/building-an-image-hashing-search-engine-with-vp-trees-and-opencv/) blog post by Adrian Rosebrock at pyimagesearch.com
+* [This](https://www.pyimagesearch.com/2019/08/26/building-an-image-hashing-search-engine-with-vp-trees-and-opencv/) blog post by Adrian Rosebrock at pyimagesearch.com
+
+* [Another](https://github.com/philipbl/duplicate-images) implementation. 
