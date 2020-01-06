@@ -25,13 +25,13 @@ $ pip install -r requirements.txt
 
 ## Basic use
 
-First we hash and create the index of the images in the base directory with the CLI command `current`, the image dataset path `train`, tree index file `tree.pickle` and the hash dictionary file `hashes.pickle`:
+First we hash and create the index of the images in the base directory with the CLI command `build`, the image dataset path `train`, tree index file `tree.pickle` and the hash dictionary file `hashes.pickle`:
 
 ```
 $ python test.py build train tree.pickle hashes.pickle
 ```
 
-The resulting index and hashes is stored in a `pickle` file. Once this has been completed, we can search through the exisiting files, with the command `config` to see if duplicates exist within `my_data/`:
+The resulting index and hashes is stored in a `pickle` file. Once this has been completed, we can search through the exisiting files, with the command `query` to see if duplicates exist within `my_data/`:
 
 ```
 $ python test.py query my_data
