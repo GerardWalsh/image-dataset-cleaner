@@ -30,7 +30,7 @@ def build(dataset, tree_path, hash_path):
 @click.argument('query_dataset')
 def query(query_dataset):
     """
-    Store configuration values in a file.
+    Iterate over query dataset and check if duplicates exist in tree.
     """
 
     tree = pickle.loads(open('tree.pickle', "rb").read())
