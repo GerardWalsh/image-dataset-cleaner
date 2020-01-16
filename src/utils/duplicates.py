@@ -23,6 +23,10 @@ def handle_duplicate(original_image_path, duplicate_image_path, duplicate_dir, i
 		os.mkdir(duplicate_dir)
 
 	# Move duplicate image to duplicate dir
-	path = duplicate_dir + duplicate_image_path.split('/')[-1].split('.')[0] + '_' + original_image_path[0].split('/')[-1]
-	cv2.imwrite(path, image)
-	os.remove(duplicate_image_path)
+	original_image_path = original_image_path[0].split('/')
+	original_image_name = original_image_path[-1].split('.')[0]
+	print('Original path name:', original_image_path)
+	print('Original image name:', original_image_name)
+	# path = duplicate_dir + duplicate_image_path.split('/')[-1].split('.')[0] + '_' + original_image_path[0:2].split('/')[-1]
+	# cv2.imwrite(path, image)
+	# os.remove(duplicate_image_path)

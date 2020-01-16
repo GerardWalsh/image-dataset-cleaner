@@ -1,3 +1,7 @@
+""""
+Written by A Rosebrock: https://www.pyimagesearch.com/2019/08/26/building-an-image-hashing-search-engine-with-vp-trees-and-opencv/
+"""
+
 # import the necessary packages
 import numpy as np
 import cv2
@@ -7,7 +11,7 @@ def dhash(image, hashSize=8):
 	gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 	
 	# resize the input image, adding a single column (width) so we
-	# can compute the horizontal gradient
+	# can compute the horizontal gradient efficiently
 	resized = cv2.resize(gray, (hashSize + 1, hashSize))
 
 	# compute the (relative) horizontal gradient between adjacent

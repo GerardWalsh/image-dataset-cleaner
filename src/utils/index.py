@@ -1,3 +1,7 @@
+""""
+Some of the source cide was written by A Rosebrock: https://www.pyimagesearch.com/2019/08/26/building-an-image-hashing-search-engine-with-vp-trees-and-opencv/
+"""
+
 import pickle
 import vptree
 import cv2
@@ -5,7 +9,8 @@ import cv2
 from src.utils.hash import convert_hash, hamming, dhash
 from src.utils.duplicates import handle_duplicate
 
-def index_images(imagePaths, tree_name, hash_name, duplicate_dir):
+# Written by A Rosebrock. 
+def build_tree(imagePaths, tree_name, hash_name, duplicate_dir):
 
 	hashes = {}
 
@@ -50,3 +55,37 @@ def index_images(imagePaths, tree_name, hash_name, duplicate_dir):
 	f = open(hash_name, "wb")
 	f.write(pickle.dumps(hashes))
 	f.close()
+
+
+def climb_tree(image_paths, tree, hashes):
+
+	if (tree and hashes):
+		for (i, imagePath) in enumerate(list(paths.list_images(query_dataset))):
+			image = cv2.imread(imagePath)
+
+			# compute the hash for the query image, then convert it
+			queryHash = dhash(image)
+			queryHash = convert_hash(queryHash)
+
+			results = tree.get_all_in_range(queryHash, 10)
+			results = sorted(results)
+
+			# loop over the results
+			for (d, h) in results:
+				# grab all image paths in our dataset with the same hash
+				resultPaths = hashes.get(h, [])
+				print("[INFO] {} total image(s) with d: {}, h: {}".format(len(resultPaths), d, h), resultPaths)
+
+				# loop over the result paths
+				for resultPath in resultPaths:
+					# load the result image and display it to our screen
+					result = cv2.imread(resultPath)
+					cv2.imshow("Duplicate", result)
+					cv2.imshow("Original", image)
+					if cv2.waitKey(0) == ord('d'):
+						print('Deleted')
+						print("duplicate file path:", imagePath)
+						os.remove(imagePath)
+						
+	else:
+		print('Error: VPtree or hash file not found.')
