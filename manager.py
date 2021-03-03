@@ -35,11 +35,7 @@ def build(dataset, tree_path, hash_path):
 @click.argument('query_dataset')
 def query(query_dataset):
     """
-<<<<<<< HEAD
-    Iterate over query dataset and check if duplicates exist in tree.
-=======
     Iterate(climb) through the established VPtree and determine the duplicate images that in the query dataset.
->>>>>>> a4ce8dd20a513969206c411b1956eb7a0728388c
     """
     image_paths = list(paths.list_images(query_dataset))
     if(image_paths):
