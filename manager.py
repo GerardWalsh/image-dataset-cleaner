@@ -6,7 +6,6 @@ import pickle
 import cv2
 
 from src.utils.index import build_tree, climb_tree
-from src.utils.hash import dhash, convert_hash
 
 DUPLICATE_DIRECTORY = 'duplicates/'
 
